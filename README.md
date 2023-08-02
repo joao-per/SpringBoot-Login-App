@@ -38,7 +38,7 @@ This is a basic Spring Boot application that allows users to register and login.
 
 ## 📖 How to Use 📖
 
-Once the application is running, navigate to `http://localhost:8080/` in your web browser. From there, you can register a new user or login with an existing user.
+Once the application is running, navigate to `http://localhost:8081/` in your web browser. From there, you can register a new user or login with an existing user.
 
 ## 📚 Resources 📚
 
