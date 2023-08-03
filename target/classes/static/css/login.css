@@ -30,7 +30,7 @@ label{
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
-	margin: 60px;
+	margin: 40px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
@@ -71,7 +71,7 @@ button:hover{
 	height: 460px;
 	background: #eee;
 	border-radius: 60% / 10%;
-	transform: translateY(-180px);
+	transform: translateY(-140px);
 	transition: .8s ease-in-out;
 }
 .login label{
@@ -80,11 +80,38 @@ button:hover{
 }
 
 #chk:checked ~ .login{
-	transform: translateY(-500px);
+	transform: translateY(-460px);
 }
 #chk:checked ~ .login label{
 	transform: scale(1);	
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
+}
+
+.users-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.users-box .header {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.users-box table {
+  width: 100%;
+}
+
+.users-box table th {
+  color: #333;
+  padding: 10px 0;
+}
+
+.users-box table td {
+  color: #666;
+  padding: 10px 0;
 }

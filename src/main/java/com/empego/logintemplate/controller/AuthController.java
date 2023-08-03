@@ -40,7 +40,7 @@ public class AuthController {
 	public String showRegistrationForm(Model model){
 		UserDto user = new UserDto();
 		model.addAttribute("user", user);
-		return "register";
+		return "login";
 	}
 
 	/**
@@ -48,20 +48,23 @@ public class AuthController {
 	 * accounts, and saving the user if there are no errors.
 	 */
 	@PostMapping("/register/save")
-	public String registration(@Valid @ModelAttribute("user") UserDto user,
-							   BindingResult result,
-							   Model model){
+	public String registration(@Valid @ModelAttribute("user") UserDto user, BindingResult result, Model model) {
 		User existing = userService.findByEmail(user.getEmail());
 		if (existing != null) {
 			result.rejectValue("email", null, "There is already an account registered with that email");
 		}
 		if (result.hasErrors()) {
-			model.addAttribute("user", user);
-			return "register";
+			model.addAttribute("message", "Error: " + result.toString());
+			model.addAttribute("success", false);
+			return "redirect:/login";
+
 		}
 		userService.saveUser(user);
-		return "redirect:/register?success";
+		model.addAttribute("message", "Registration successful");
+		model.addAttribute("success", true);
+		return "redirect:/login";
 	}
+
 
 	/**
 	 * The function retrieves a list of registered users and adds it to the model before returning the
