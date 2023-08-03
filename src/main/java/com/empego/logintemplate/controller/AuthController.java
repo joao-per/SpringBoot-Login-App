@@ -29,23 +29,24 @@ public class AuthController {
 	}
 
 	@GetMapping("/login")
-	public String loginForm() {
+	public String loginForm(Model model) {
+		UserDto user = new UserDto();
+		model.addAttribute("user", user);
 		return "login";
 	}
 
 	// handler method to handle user registration request
-	@GetMapping("register")
+	@GetMapping("/register")
 	public String showRegistrationForm(Model model){
 		UserDto user = new UserDto();
 		model.addAttribute("user", user);
 		return "register";
 	}
 
-	
-/**
- * The function handles the registration process by validating user input, checking for existing
- * accounts, and saving the user if there are no errors.
- */
+	/**
+	 * The function handles the registration process by validating user input, checking for existing
+	 * accounts, and saving the user if there are no errors.
+	 */
 	@PostMapping("/register/save")
 	public String registration(@Valid @ModelAttribute("user") UserDto user,
 							   BindingResult result,
@@ -62,10 +63,10 @@ public class AuthController {
 		return "redirect:/register?success";
 	}
 
-/**
- * The function retrieves a list of registered users and adds it to the model before returning the
- * "users" view.
- */
+	/**
+	 * The function retrieves a list of registered users and adds it to the model before returning the
+	 * "users" view.
+	 */
 	@GetMapping("/users")
 	public String listRegisteredUsers(Model model){
 		List<UserDto> users = userService.findAllUsers();
@@ -73,3 +74,4 @@ public class AuthController {
 		return "users";
 	}
 }
+
