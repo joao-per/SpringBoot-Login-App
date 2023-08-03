@@ -14,6 +14,10 @@ import com.empego.logintemplate.repository.UserRepository;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+/**
+ * The CustomUserDetailsService class is a service that implements the UserDetailsService interface and
+ * is responsible for retrieving user details from a UserRepository.
+ */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 

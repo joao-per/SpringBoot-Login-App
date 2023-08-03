@@ -55,3 +55,6 @@ public class SpringSecurity {
                 .passwordEncoder(passwordEncoder());
     }
 }
+
+
+// Flyway liquibase
