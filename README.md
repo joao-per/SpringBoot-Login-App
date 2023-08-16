@@ -21,20 +21,14 @@ This is a basic Spring Boot application that allows users to register and login.
 
 1. Clone the repository:
     ```
-    git clone https://github.com/yourusername/yourrepository.git
+    git clone https://github.com/joao-per/springboot-login-app.git
     ```
 2. Navigate to the project directory:
     ```
-    cd yourrepository
+    cd springboot-login-app
     ```
-3. Build the project:
-    ```
-    ./mvnw package
-    ```
-4. Run the application:
-    ```
-    java -jar target/yourproject-0.0.1-SNAPSHOT.jar
-    ```
+3. Build the project
+4. Run the application!
 
 ## 📖 How to Use 📖
 
